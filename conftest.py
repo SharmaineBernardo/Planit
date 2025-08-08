@@ -6,7 +6,7 @@ from tests.pages.home_page import HomePage
 @pytest.fixture(scope="session")
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=500)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
         yield page

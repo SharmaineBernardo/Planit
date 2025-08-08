@@ -29,11 +29,6 @@ jobs:
         pip install -r requirements.txt
         playwright install --with-deps
     
-    - name: Verify feature files exist
-      run: |
-        echo "Listing feature files..."
-        find tests -name "*.feature"
-    
     - name: Run tests
       run: |
         pytest tests/

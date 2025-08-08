@@ -10,6 +10,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run: 
+        working-directory: .
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -24,8 +28,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         playwright install --with-deps
-
-    - name: Run tests
+    
+    -name: Verify feature files exist
       run: |
-        pytest tests/
+        echo "Listing feature files..."
+        find tests -name "*.feature"
+
+ name: Run tests
+      env:
+        PYTHONPATH: .
+      run: |
+        pytest --bdd-features-base-dir=tests/features tests/
 

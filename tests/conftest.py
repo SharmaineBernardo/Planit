@@ -6,7 +6,9 @@ from tests.pages.shop_page import ShopPage
 from tests.pages.cart_page import CartPage
 
 from dotenv import load_dotenv
+
 load_dotenv()
+
 
 @pytest.fixture(scope="session")
 def page():
@@ -17,17 +19,21 @@ def page():
         yield page
         browser.close()
 
+
 @pytest.fixture()
 def home_page(page: Page) -> HomePage:
     return HomePage(page)
+
 
 @pytest.fixture()
 def contact_page(page: Page) -> ContactPage:
     return ContactPage(page)
 
+
 @pytest.fixture()
 def shop_page(page: Page) -> ShopPage:
     return ShopPage(page)
+
 
 @pytest.fixture()
 def cart_page(page: Page) -> CartPage:

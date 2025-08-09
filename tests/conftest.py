@@ -11,7 +11,7 @@ load_dotenv()
 @pytest.fixture(scope="session")
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
         yield page

@@ -5,6 +5,9 @@ from tests.pages.home_page import HomePage
 from tests.pages.shop_page import ShopPage
 from tests.pages.cart_page import CartPage
 
+from dotenv import load_dotenv
+load_dotenv()
+
 @pytest.fixture(scope="session")
 def page():
     with sync_playwright() as p:

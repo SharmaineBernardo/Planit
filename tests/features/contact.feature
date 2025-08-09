@@ -1,9 +1,11 @@
 Feature: As a user, I want to submit and validate the contact form
 
-    Scenario: Contact form validation
+    Background: 
         Given I am on the home page
-        When I navigate to the 'Contact' page
-        And I submit the form
+        And I navigate to the 'Contact' page
+
+    Scenario: TC1 - Contact form validation
+        When I submit the form
         Then I should see an error in the header message
         And I should see that the error message 'Forename is required' is displayed
         And I should see that the error message 'Email is required' is displayed
@@ -19,10 +21,8 @@ Feature: As a user, I want to submit and validate the contact form
         And I should no longer see the error message 'Email is required'
         And I should no longer see the error message 'Message is required'
     
-    Scenario Outline: Submit a feedback
-        Given I am on the home page
-        When I navigate to the 'Contact' page
-        And I enter the following information in the fields:
+    Scenario Outline: TC2 - Submit a feedback
+        When I enter the following information in the fields:
             | Forename  | TestData        |
             | Surname   | User            |
             | Email     | tduser@test.com |

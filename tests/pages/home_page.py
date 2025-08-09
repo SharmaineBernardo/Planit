@@ -5,5 +5,6 @@ class HomePage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
     
-    def click_nav_link(self, nav_item: str) -> None:
-        self.page.get_by_role("link", name=nav_item).click()
+    def go_to_page(self, nav_item: str) -> None:
+        self.page.get_by_role("link", name=nav_item, exact=True).click()
+    

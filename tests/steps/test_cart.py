@@ -22,7 +22,7 @@ def step_verify_cart_item_details(
 ) -> None:
     table_rows = datatable[1:]
     for item, price, subtotal in table_rows:
-        actual_price = cart_page.get_unit_price(item)
+        actual_price = cart_page.get_item_price(item)
         actual_subtotal = cart_page.get_item_subtotal(item)
 
         assert actual_price == float(price), f"Incorrect price for item '{item}'"
@@ -54,8 +54,8 @@ def step_total_cost_is_visible(cart_page: CartPage, total: str) -> None:
 def step_verify_subtotal(cart_page: CartPage, datatable: list[list[str]]) -> None:
     table_rows = datatable[1:]
     for item, expected_subtotal in table_rows:
-        actual_price = cart_page.get_unit_price(item)
-        actual_quantity = cart_page.get_unit_quantity(item)
+        actual_price = cart_page.get_item_price(item)
+        actual_quantity = cart_page.get_item_quantity(item)
 
         assert float(expected_subtotal) == float(actual_quantity * actual_price), (
             f"Incorrect subtotal for item '{item}'"

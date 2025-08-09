@@ -13,12 +13,12 @@ Objective: Perform UI automation tests for https://jupiter.cloud.planittesting.c
 cd <REPO_FOLDER>
 
 #For Windows:
-python -m venv venv
-venv\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate
 
 #For macOS/Linux:
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 3. Install dependencies:
 ```bash

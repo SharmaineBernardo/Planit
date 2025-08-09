@@ -14,7 +14,7 @@ Feature: As a user, I want to submit and validate the contact form
             | Forename  | TestData        |
             | Surname   | User            |
             | Email     | tduser@test.com |
-            | Telephone | 0212345         |
+            | Telephone | 02 12345 5678   |
             | Message   | Test Message    |
         Then I should no longer see an error in the header message
         And I should no longer see the error message 'Forename is required'

@@ -1,7 +1,7 @@
 # Planit
 Objective: Perform UI automation tests for https://jupiter.cloud.planittesting.com/
 
-## Pre-requisites:
+## Prerequisites:
 1. Python 3.10+: https://www.python.org/downloads/
 2. pip (Python package manager)
 3. Git: https://git-scm.com/downloads
